@@ -2,8 +2,12 @@
 <html lang="en">
 <!--
 Copyright Git.traning
+<<<<<<< HEAD
+some silly changes from main branch
+=======
 adding changes before rebasing conflict
 branch big trouble 
+>>>>>>> c9ac6ce (adding some trouble to simple.html)
 -->
   <head>
     <meta charset="UTF-8">
