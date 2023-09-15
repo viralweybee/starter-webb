@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{GAtag}}
+    {{FacebookPixelCode}}
+    <meta charset="utf-8">
+    <title>{{ContactPageTitle}} - {{SiteTitle}} - {{KeyLine}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="{{SiteTitle}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow " />
+    <link rel="canonical" href="{{Site-Url}}" />
+    <Meta name="language" content="English" />
+    <meta name="title" content="{{ContactPageTitle}} - {{SiteTitle}} - {{KeyLine}}">
+    <meta name="description" content="{{ContactPageTitle}} - {{SiteTitle}} - {{ContactPageDescription}}" />
+    <meta name="keywords" content="{{ContactPageKeyword}}" />
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ContactPageTitle}} - {{SiteTitle}} - {{KeyLine}}" />
+    <meta property="og:description" content="{{ContactPageTitle}} - {{SiteTitle}} - {{ContactPageDescription}}" />
+    <meta property="og:image" content="{{Logo}}" />
+    <meta property="og:url" content="{{Site-Url}}" />
+    <meta property="og:site_name" content="{{SiteTitle}}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{SiteTitle}}" />
+    <meta name="twitter:title" content="{{ContactPageTitle}} - {{SiteTitle}} - {{KeyLine}}" />
+    <meta name="twitter:description" content="{{ContactPageTitle}} - {{SiteTitle}} - {{ContactPageDescription}}" />
+    <meta name="twitter:image" content="{{Logo}}" />
+
+    <link rel="icon" type="image/x-icon" href="{{Favicon}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <!-- {{Style}}
+    {{Script}} -->
+</head>
+<style>
+    body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+:root {
+    --primary-color: #040D12;
+    --second-color: #183D3D;
+    --third-color:#5C8374;
+    --fourth-color:#93B1A6;
+    --white: #ffffff;
+    --bgcolor: #f6f9fe;
+    --primary-font: 'Rubik', sans-serif;
+    --second-font: 'Sarabun', sans-serif;
+}
+
+/******************************************************************navbar css ************************************************************/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::selection {
+    background: rgb(0, 123, 255, 0.3);
+}
+
+.content {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+.about .content {
+    margin-top: 100px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+    background-color: var(--second-color);
+}
+
+.navbar.sticky {
+    padding: 10px 0;
+    background: var(--second-color);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color:var(--white);
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: var(--fourth-color);
+}
+
+.about {
+    padding: 40px 0;
+}
+
+.about .title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about p {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn {
+  position: absolute;
+  right: 45px;
+  top: 9px;
+  background-color: white;
+}
+
+.navbar.sticky .icon.cancel-btn {
+    top: 10px;
+}
+
+@media (max-width: 868px) {
+    body.disabledScroll {
+        overflow: hidden;
+    }
+
+    .icon {
+        display: block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        z-index: 9;
+    }
+
+    .icon.cancel-btn {
+        display: none;
+    }
+
+    .icon.cancel-btn.show {
+        display: block;
+    }
+
+    .icon.hide {
+        display: none;
+    }
+
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: var(--second-color);;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+        transition: all 0.3s ease;
+    }
+
+    .navbar.sticky .menu-list {
+      clip-path: circle(25px at calc(100% - 55px) calc(0% + 25px));
+    }
+
+    .navbar .menu-list.active {
+        clip-path: circle(75%);
+    }
+
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+
+    .navbar .menu-list li a {
+        font-size: 23px;
+    }
+    .menu-btn{
+        background-color: white;
+        margin-right: 15px;
+    }
+}
+/* banner----------------------------------------------------------------------------------------------------------------------------------- */
+.banner-area{
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    padding:  20px 0;
+    background-color: var(--fourth-color);
+    color: var(--white);
+    font-size: 25px;
+}
+/* book a demo---------------------------------------------------------------------- */
+.contact-custom .container{
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contact-custom-inside{
+    display: flex;
+}
+.contact-custom-item{
+    width: 600px;
+}
+.contact-custom-item .title{
+  text-align: center;
+  padding: 30px;
+  font-size: 35px;
+}
+.contact-custom-item p{
+    padding: 10px;
+    font-size: 16px;
+}
+@media (max-width: 700px){
+  .contact-custom-item img{
+    width: 400px;
+    height: 350px;
+  }
+  .contact-custom-item{
+    width: 400px;
+}
+}
+@media (max-width: 450px){
+  .contact-custom-item img{
+    width: 300px;
+    height: 250px;
+  }
+  .contact-custom-item{
+    width: 300px;
+  }
+}
+/* contact section ------------------------------------------------------------------------------------------------------------- */
+.contact_us_6 * {
+  font-family: Nunito, sans-serif;
+}
+
+.contact_us_6 .text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.contact_us_6 .responsive-cell-block {
+  min-height: 75px;
+}
+
+.contact_us_6 input:focus,
+.contact_us_6 textarea:focus {
+  outline-color: initial;
+  outline-style: none;
+  outline-width: initial;
+}
+
+.contact_us_6 .container-block {
+  min-height: 75px;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+}
+
+.contact_us_6 .responsive-container-block {
+  min-height: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.contact_us_6 .responsive-container-block.big-container {
+  padding-top: 10px;
+  padding-right: 30px;
+  width: 35%;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  background-color: #03a9f4;
+  position: absolute;
+  height: 950px;
+  right: 0px;
+}
+
+.contact_us_6 .responsive-container-block.container {
+  position: relative;
+  min-height: 75px;
+  flex-direction: row;
+  z-index: 2;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+  max-width: 1320px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
+.contact_us_6 .container-block.form-wrapper {
+  background-color: white;
+  max-width: 450px;
+  text-align: center;
+  padding-top: 50px;
+  padding-right: 40px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 90px;
+  margin-right: 0px;
+  margin-bottom: 60px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .text-blk.contactus-head {
+  font-size: 36px;
+  line-height: 52px;
+  font-weight: 900;
+}
+
+.contact_us_6 .text-blk.contactus-subhead {
+  color: #9c9c9c;
+  width: 300px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  display: none;
+}
+
+.contact_us_6 .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 26px;
+  margin-left: 0px;
+  min-height: 50px;
+}
+
+.contact_us_6 .input {
+  width: 100%;
+  height: 50px;
+  padding-top: 1px;
+  padding-right: 15px;
+  padding-bottom: 1px;
+  padding-left: 15px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #eeeeee;
+  border-right-color: #eeeeee;
+  border-bottom-color: #eeeeee;
+  border-left-color: #eeeeee;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  font-size: 16px;
+  color: black;
+}
+
+.contact_us_6 .textinput {
+  width: 98%;
+  min-height: 150px;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #eeeeee;
+  border-right-color: #eeeeee;
+  border-bottom-color: #eeeeee;
+  border-left-color: #eeeeee;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  font-size: 16px;
+}
+
+.contact_us_6 .submit-btn {
+  width: 98%;
+  background-color: var(--third-color);
+  height: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: outset;
+  border-right-style: outset;
+  border-bottom-style: outset;
+  border-left-style: outset;
+  border-top-color: #767676;
+  border-right-color: #767676;
+  border-bottom-color: #767676;
+  border-left-color: #767676;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.contact_us_6 .form-box {
+  z-index: 2;
+  margin-top: 0px;
+  margin-right: 48px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .text-blk.input-title {
+  text-align: left;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  color: #9c9c9c;
+}
+
+.contact_us_6 ::placeholder {
+  color: #dadada;
+}
+
+.contact_us_6 .mob-text {
+  display: block;
+  text-align: left;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-12.wk-ipadp-12 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .text-blk.contactus-subhead.color {
+  color: white;
+}
+
+/* .contact_us_6  {
+  max-width: 800px;
+  max-height: 520px;
+  width: 100%;
+  height: 520px;
+  background-color: #d9d9d9;
+  background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/sc23.png");
+  background-size: cover;
+  background-position-x: 50%;
+  background-position-y: 50%;
+} */
+
+.contact_us_6 .map-part {
+  width: 100%;
+  height: 100%;
+}
+
+.contact_us_6 .text-blk.map-contactus-head {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 32px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  color: var(--third-color)
+}
+
+.contact_us_6 .text-blk.map-contactus-subhead {
+  max-width: 300px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .social-media-links.mob {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  width: 230px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact_us_6 .link-img {
+  width: 30px;
+  height: 30px;
+  margin-top: 0px;
+  margin-right: 25px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .link-img.image-block {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.contact_us_6 .social-icon-link {
+  margin: 0 25px 0 0;
+  padding: 0 0 0 0;
+}
+.social-icon-link{
+    fill: var(--third-color);
+}
+.social-icon-link:hover{
+    fill: var(--primary-color);
+}
+@media (max-width: 1024px) {
+  .contact_us_6 .responsive-container-block.container {
+    justify-content: center;
+  }
+
+  .contact_us_6 .map-box {
+    position: absolute;
+    top: 0px;
+    max-height: 320px;
+  }
+
+  .contact_us_6 .map-box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact_us_6 .responsive-container-block.container {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .contact_us_6 .map-part {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_us_6 .container-block.form-wrapper {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .mob-text {
+    display: block;
+  }
+
+  .contact_us_6 .form-box {
+    margin-top: 200px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .link-img {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .contact_us_6 .social-media-links.mob {
+    justify-content: space-evenly;
+  }
+
+  .contact_us_6 .responsive-cell-block.wk-desk-7.wk-ipadp-12.wk-tab-12.wk-mobile-12 {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .contact_us_6 .text-blk.contactus-subhead {
+    display: block;
+  }
+
+  .contact_us_6 .mob-text {
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .responsive-container-block.container {
+    flex-wrap: wrap;
+  }
+
+  .contact_us_6 .form-box {
+    margin-top: 200px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact_us_6 .submit-btn {
+    width: 100%;
+  }
+
+  .contact_us_6 .input {
+    width: 100%;
+  }
+
+  .contact_us_6 .textinput {
+    width: 100%;
+  }
+
+  .contact_us_6 .container-block.form-wrapper {
+    margin-top: 80px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .text-blk.input-title {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .contact_us_6 .form-box {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+
+  .contact_us_6 .container-block.form-wrapper {
+    padding-top: 50px;
+    padding-right: 15px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+  }
+
+  .contact_us_6 .mob-text {
+    display: block;
+  }
+
+  .contact_us_6 .responsive-container-block.container {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .contact_us_6 .form-box {
+    margin-top: 200px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .container-block.form-wrapper {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .form-box {
+    margin-top: 220px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .form-box {
+    margin-top: 220px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .text-blk.contactus-head {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact_us_6 .container-block.form-wrapper {
+    padding-top: 50px;
+    padding-right: 15px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+  }
+
+  .contact_us_6 .container-block.form-wrapper {
+    margin-top: 60px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .responsive-cell-block.wk-ipadp-6.wk-tab-12.wk-mobile-12.wk-desk-6 {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .responsive-container-block {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 35px;
+    margin-left: 0px;
+  }
+
+  .contact_us_6 .text-blk.input-title {
+    font-size: 12px;
+  }
+
+  .contact_us_6 .text-blk.contactus-head {
+    font-size: 26px;
+    line-height: 35px;
+  }
+
+  .contact_us_6 .input {
+    height: 45px;
+  }
+}
+/* footer section =--------------------------------------------------------------------------- */
+.page-footer{
+    margin-top: 80px;
+    /* background-color: var(--fourth-color); */
+}
+.mt-4{
+    background-color: var(--primary-color);
+}
+.row-1{
+    background-color: var(--fourth-color);
+}
+.row{
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.col-lg-3{
+    width: 285px;
+    height: 275px;
+}
+.col-lg-3 ul{
+    /* margin-left: 0; */
+    padding-left: 0;
+}
+.col-lg-3 li {
+    list-style: none;
+    padding-top: 5px;
+}
+.col-lg-3 a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.col-lg-3 h5{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.col-lg-3 p{
+    text-decoration: underline;
+}
+.col-lg-3 img{
+    padding: 39px;
+}
+.form-control{
+    width: 200px;
+    height: 20px;
+}
+.btn2{
+    margin: 10px 0;
+    font-size: 16px;
+   width: fit-content;
+   background-color:var(--primary-color);
+   color:var(--white);
+   border-radius: 15px;
+   padding: 7px 25px;
+}   
+.btn2:hover{
+    cursor: pointer;
+   background-color: var(--fourth-color);
+   color: var(--primary-color);
+    
+}
+.phone{
+    display: flex;
+    gap: 2px;
+}
+.email{
+    display: flex;
+    gap: 2px;
+}
+.phone span{
+   padding-top: 14px;
+    
+}
+.phone span:hover{
+    fill: var(--white);
+    cursor: pointer;
+}
+.email span:hover{
+    fill: var(--white);
+    cursor: pointer;
+}
+.email span{
+    padding-top: 14px;
+}
+/* copy right */
+.sosmed-button a{
+    text-decoration: none;
+    padding-left: 10px;
+    fill: var(--fourth-color);
+}
+.sosmed-button a:hover{
+    fill: var(--white);
+}
+.text-right{
+    padding-top: 15px;
+}
+.sosmed-button{
+    /* border: 1px solid black; */
+    width: 230px;
+}
+.mt-4 p{
+    color: var(--white);
+}
+.mt-4 span{
+   color: red;
+}
+
+</style>
+<body itemscope="" itemtype="https://schema.org/LocalBusiness">
+      <!--Header sections-->
+      {{Header}}
+      <!--Header sections-end-->
+      <!-- banner -->
+      <div class="banner-area">
+        <div class="container">
+            <div class="banner-content">
+                <h1 class="title">{{ContactPageTitle}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Book a Demo -------------------------------------------------------------------------------------------- -->
+    <div class="contact-custom">
+        <div class="container">
+            <div class="contact-custom-item">
+                <img src="{{ContactCustomImage}}" alt="{{ContactCustomTitle}}" srcset="{{ContactCustomSrcSet}}" width="600px" height="450px">
+            </div>
+            <div class="contact-custom-inside">
+                <div class="contact-custom-item">
+                    <h1 class="title">{{ContactCustomTitle}}</h1>
+                    <p>{{ContactCustomDescription}}</p>                   
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <!-- contact page ---------------------------------------------------------------------------------------------------->
+    <div class="contact_us_6">
+        <div class="responsive-container-block container">
+          <form class="form-box" method="post" id="contactus-form">
+            <div class="container-block form-wrapper">
+              <div class="mob-text">
+                <p class="text-blk contactus-head">
+                  Get in Touch
+                </p>
+                <p class="text-blk contactus-subhead">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+                </p>
+              </div>
+              <div class="responsive-container-block" id="i2cbk">
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
+                  <p class="text-blk input-title">
+                    FIRST NAME
+                  </p>
+                  <input class="input" id="name-key" name="FirstName" placeholder="Please enter first name...">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
+                  <p class="text-blk input-title">
+                    EMAIL
+                  </p>
+                  <input class="input"  id="email-key" name="Email" placeholder="Please enter email...">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
+                  <p class="text-blk input-title">
+                    PHONE NUMBER
+                  </p>
+                  <input class="input"  id="number-key" name="PhoneNumber" placeholder="Please enter phone number...">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
+                  <p class="text-blk input-title">
+                    WHAT DO YOU HAVE IN MIND ?
+                  </p>
+                  <textarea class="textinput" id="message-key" placeholder="Please enter query..."></textarea>
+                </div>
+              </div>
+              <div id="ContactFormResponse"></div>
+              <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2">
+                <button type="submit" class="btn" name="submit">Submit</button>
+              </button>
+            </div>
+          </form>
+          <div class="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
+            <div class="map-part">
+              <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
+                Reach us at
+              </p>
+              <a itemprop="brand">{{SiteTitle}}</a>
+              <p itemprop="streetAddress"> {{ContactAddress}}</p>  
+              <div class="social-media-links mob">
+                <a class="social-icon-link" href="{{Twitter}}" id="ix94i-2-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" enable-background="new 0 0 100 100"
+                    viewBox="0 0 100 100" >
+                    <path id="_x30_4.Twitter"
+                        d="m89.9 25.2c-3 1.3-6.1 2.2-9.4 2.6 3.4-2 6-5.2 7.2-9.1-3.2 1.9-6.7 3.2-10.4 4-3-3.2-7.3-5.2-12-5.2-9.1 0-16.4 7.4-16.4 16.4 0 1.3.1 2.5.4 3.7-13.6-.6-25.6-7.2-33.7-17.1-5.8 10.4.7 19 5 21.9-2.6 0-5.2-.8-7.4-2 0 8.1 5.7 14.8 13.1 16.3-1.6.5-5.2.8-7.4.3 2.1 6.5 8.2 11.3 15.3 11.4-5.6 4.4-13.8 7.9-24.3 6.8 7.3 4.7 15.9 7.4 25.2 7.4 30.2 0 46.6-25 46.6-46.6 0-.7 0-1.4-.1-2.1 3.4-2.5 6.2-5.4 8.3-8.7z">
+                    </path>
+                </svg>
+                </a>
+                <a class="social-icon-link" href="{{Facebook}}" id="itixd">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" enable-background="new 0 0 100 100"
+                    viewBox="0 0 100 100" >
+                    <g id="_x30_1._Facebook">
+                        <path id="Icon_11_"
+                            d="m40.4 55.2c-.3 0-6.9 0-9.9 0-1.6 0-2.1-.6-2.1-2.1 0-4 0-8.1 0-12.1 0-1.6.6-2.1 2.1-2.1h9.9c0-.3 0-6.1 0-8.8 0-4 .7-7.8 2.7-11.3 2.1-3.6 5.1-6 8.9-7.4 2.5-.9 5-1.3 7.7-1.3h9.8c1.4 0 2 .6 2 2v11.4c0 1.4-.6 2-2 2-2.7 0-5.4 0-8.1.1-2.7 0-4.1 1.3-4.1 4.1-.1 3 0 5.9 0 9h11.6c1.6 0 2.2.6 2.2 2.2v12.1c0 1.6-.5 2.1-2.2 2.1-3.6 0-11.3 0-11.6 0v32.6c0 1.7-.5 2.3-2.3 2.3-4.2 0-8.3 0-12.5 0-1.5 0-2.1-.6-2.1-2.1 0-10.5 0-32.4 0-32.7z">
+                        </path>
+                    </g>
+                </svg>
+                </a>
+                <a class="social-icon-link" href="{{WhatsApp}}" id="izxvt">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24" 
+                    viewBox="0 0 24 24" >
+                    <path
+                        d="m17.507 14.307-.009.075c-2.199-1.096-2.429-1.242-2.713-.816-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.293-.506.32-.578.878-1.634.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.576-.05-.997-.042-1.368.344-1.614 1.774-1.207 3.604.174 5.55 2.714 3.552 4.16 4.206 6.804 5.114.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z">
+                    </path>
+                    <path
+                        d="m20.52 3.449c-7.689-7.433-20.414-2.042-20.419 8.444 0 2.096.549 4.14 1.595 5.945l-1.696 6.162 6.335-1.652c7.905 4.27 17.661-1.4 17.665-10.449 0-3.176-1.24-6.165-3.495-8.411zm1.482 8.417c-.006 7.633-8.385 12.4-15.012 8.504l-.36-.214-3.75.975 1.005-3.645-.239-.375c-4.124-6.565.614-15.145 8.426-15.145 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99z">
+                    </path>
+                </svg>
+                </a>
+                <a class="social-icon-link" href="{{Instagram}}" id="izldf-2-2">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 511 511.9" >
+                        <path
+                            d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0">
+                        </path>
+                        <path
+                            d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0">
+                        </path>
+                        <path
+                            d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0">
+                        </path>
+                    </svg>
+                </a>
+              </div>
+              <div class="map-box container-block">
+                <iframe title="google-loaction" src="https://maps.google.com/maps?q={{AddressMap}}&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--Footer sections-->
+    {{Footer}}
+    <!--Footer sections-end-->
+    <script>
+          const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            body.classList.add("disabledScroll");
+        }
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+        }
+
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+    </script>
+    
+    <script>
+        const contactForm = document.getElementById('contactus-form');
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            var name = document.getElementById("name-key").value;
+            var email = document.getElementById("email-key").value;
+            var number = document.getElementById("number-key").value;
+            var message = document.getElementById("message-key").value;
+            var formData = {
+                Id: 0,
+                Name: name,
+                PhoneNumber: number,
+                emailAddress: email,
+                Message: message,
+                TemplateId: "{{TemplateId}}",
+                userId: "{{UserId}}"
+            };
+            const response = await fetch('{{BaseUrl}}/WEB/ContactUs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify((formData))
+            });
+            const result = await response.json();
+            if (result.data == "Success") {
+                document.getElementById("ContactFormResponse").innerHTML = `<div class="alert-success">Message Sent Succssfully.</div>`;
+            }
+            else {
+                document.getElementById("ContactFormResponse").innerHTML = `<div class="alert-danger">Please Try Again.</div>`;
+            }
+        });
+    </script>
+</body>
+</html>

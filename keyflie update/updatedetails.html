@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{GAtag}}
+    {{FacebookPixelCode}}
+    <meta charset="utf-8">
+    <title>{{UpdateTitle}} - {{SiteTitle}} - {{KeyLine}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="{{SiteTitle}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow " />
+    <link rel="canonical" href="{{Site-Url}}" />
+    <Meta name="language" content="English" />
+    <meta name="title" content="{{UpdateTitle}} - {{SiteTitle}} - {{KeyLine}}">
+    <meta name="description" content="{{UpdateTitle}} - {{UpdateDetailPageDescription}}" />
+    <meta name="keywords" content="{{UpdateDetailPageKeyword}}" />
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{UpdateTitle}} - {{SiteTitle}} - {{KeyLine}}" />
+    <meta property="og:description" content="{{UpdateTitle}} - {{UpdateDetailPageDescription}}" />
+    <meta property="og:image" content="{{Logo}}" />
+    <meta property="og:url" content="{{Site-Url}}" />
+    <meta property="og:site_name" content="{{SiteTitle}}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{SiteTitle}}" />
+    <meta name="twitter:title" content="{{UpdateTitle}} - {{SiteTitle}} - {{KeyLine}}" />
+    <meta name="twitter:description" content="{{UpdateTitle}} - {{UpdateDetailPageDescription}}" />
+    <meta name="twitter:image" content="{{Logo}}" />
+
+    <link rel="icon" type="image/x-icon" href="{{Favicon}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    {{Style}}
+    {{Script}}
+</head>
+<style>
+    body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+:root {
+    --primary-color: #040D12;
+    --second-color: #183D3D;
+    --third-color:#5C8374;
+    --fourth-color:#93B1A6;
+    --white: #ffffff;
+    --bgcolor: #f6f9fe;
+    --primary-font: 'Rubik', sans-serif;
+    --second-font: 'Sarabun', sans-serif;
+}
+
+/******************************************************************navbar css ************************************************************/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::selection {
+    background: rgb(0, 123, 255, 0.3);
+}
+
+.content {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+.about .content {
+    margin-top: 100px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+    background-color: var(--second-color);
+}
+
+.navbar.sticky {
+    padding: 10px 0;
+    background: var(--second-color);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color:var(--white);
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: var(--fourth-color);
+}
+
+.about {
+    padding: 40px 0;
+}
+
+.about .title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about p {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 45px;
+    top: 9px;
+    background-color: white;
+}
+
+.navbar.sticky .icon.cancel-btn {
+    top: 10px;
+}
+
+@media (max-width: 868px) {
+    body.disabledScroll {
+        overflow: hidden;
+    }
+
+    .icon {
+        display: block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        z-index: 9;
+    }
+
+    .icon.cancel-btn {
+        display: none;
+    }
+
+    .icon.cancel-btn.show {
+        display: block;
+    }
+
+    .icon.hide {
+        display: none;
+    }
+
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: var(--second-color);
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+        transition: all 0.3s ease;
+    }
+
+    .navbar.sticky .menu-list {
+        clip-path: circle(25px at calc(100% - 55px) calc(0% + 25px));
+    }
+
+    .navbar .menu-list.active {
+        clip-path: circle(75%);
+    }
+
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+
+    .navbar .menu-list li a {
+        font-size: 23px;
+    }
+    .menu-btn{
+        background-color: white;
+        margin-right: 15px;
+    }
+}
+/* banner--------------------------------  */
+.banner-area{
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    padding-top: 50px;
+    background-color: var(--fourth-color);
+    color: var(--white);
+}
+/* updates-details----------------------------------- */
+.updates-detials{
+    margin:60px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.updates-detials .container{
+    padding: 30px;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+@media (max-width: 425px){
+    .updates-detials .container{
+        padding: 15px;
+    }
+}
+@media (max-width: 375px){
+    .updates-detials .container{
+        padding: 8px;
+    }
+}
+.update-detials-image img{
+    width: 100%;
+    object-fit: cover;
+}
+.update-detials-content{
+    text-align: center;
+}
+.tags-itmes ul{
+   display: flex;
+   flex-wrap: wrap;
+    gap: 10px;
+}
+.tags .title{
+    margin-left: 30px;
+    font-size: 26px;
+}
+.tags-itmes ul li{
+    /* text-decoration: none; */
+    list-style: none;
+    border: 1px solid;
+    background-color: var(--third-color);
+    color: var(--white);
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+.tags-itmes ul li:hover{
+    cursor: pointer;
+}
+.share .title{
+    margin-left: 30px;
+    font-size: 26px;
+}
+.share-social ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.share-social ul li {
+    list-style: none;
+}
+.share-social ul li a svg {
+    fill: var(--second-color);
+
+}
+.share-social ul li a svg:hover{
+    fill: var(--fourth-color);
+}
+/* Footer*********************************************** */
+.page-footer {
+    margin-top: 80px;
+    /* background-color: var(--fourth-color); */
+}
+
+.mt-4 {
+    background-color: var(--primary-color);
+}
+
+.row-1 {
+    background-color: var(--fourth-color);
+}
+
+.row {
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.col-lg-3 {
+    width: 285px;
+    height: 275px;
+}
+
+.col-lg-3 ul {
+    /* margin-left: 0; */
+    padding-left: 0;
+}
+
+.col-lg-3 li {
+    list-style: none;
+    padding-top: 5px;
+}
+
+.col-lg-3 a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.col-lg-3 h5 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.col-lg-3 p {
+    text-decoration: underline;
+}
+
+.col-lg-3 img {
+    padding: 39px;
+}
+
+.form-control {
+    width: 200px;
+    height: 20px;
+}
+
+.btn2 {
+    margin: 10px 0;
+    font-size: 16px;
+    width: fit-content;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 15px;
+    padding: 7px 25px;
+}
+
+.btn2:hover {
+    cursor: pointer;
+    background-color: var(--fourth-color);
+    color: var(--primary-color);
+
+}
+
+.phone {
+    display: flex;
+    gap: 2px;
+}
+
+.email {
+    display: flex;
+    gap: 2px;
+}
+
+.phone span {
+    padding-top: 14px;
+
+}
+
+.phone span:hover {
+    fill: var(--white);
+    cursor: pointer;
+}
+
+.email span:hover {
+    fill: var(--white);
+    cursor: pointer;
+}
+
+.email span {
+    padding-top: 14px;
+}
+
+/* copy right */
+.sosmed-button a {
+    text-decoration: none;
+    padding-left: 10px;
+    fill: var(--fourth-color);
+}
+
+.sosmed-button a:hover {
+    fill: var(--white);
+}
+
+.text-right {
+    padding-top: 15px;
+}
+
+.sosmed-button {
+    /* border: 1px solid black; */
+    width: 230px;
+}
+
+.mt-4 p {
+    color: var(--white);
+}
+
+.mt-4 span {
+    color: red;
+}
+</style>
+<body>
+       <!--Header sections-->
+       {{Header}}
+       <!--Header sections-end-->
+       <div class="banner-area">
+        <div class="container">
+            <div class="banner-content">
+                <h1 class="title">{{UpdateTitle}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Update details ----------------------------------------------------------------- -->
+    <div class="updates-detials spad">
+        <div class="container">
+            <div class="updates-detials-inside" itemscope="" itemtype="http://schema.org/BlogPosting">
+                <div class="update-detials-image">
+                    <img src="{{UpdateImage}}"
+                        srcset="{{UpdateImageSrcSet}}"
+                        sizes="(max-width: 600px) 480px, 800px" width="1060px" height="464px" alt="{{UpdateTitle}}"
+                        itemprop="image">
+                </div>
+                <div class="update-detials-content" itemprop="description">
+                    <h1 class="title">{{UpdateTitle}}</h1>
+                    <p>
+                        {{UpdateDescription}}
+                    </p>
+                   
+                </div>
+                <div class="tag-share">
+                    <div class="tags" id="UpdateDetailTagParent">
+                        <div class="title">Tags:</div>
+                        <div class="tags-itmes" id="UpdateDetailTags">
+                            <ul>
+                                <li><a href="{{UpdateKeywordPage}}.html">{{UpdateKeyword}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <div class="title">Share:</div>
+                        <div class="share-social">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{DomainName}}{{UpdateTitleSlug}}.html"
+                                        itemprop="facebook" aria-label="facebook" rel="noreferrer" target="_blank">
+                                        <svg id="Layer_1" enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                            <g id="_x30_1._Facebook">
+                                                <path id="Icon_11_"
+                                                    d="m40.4 55.2c-.3 0-6.9 0-9.9 0-1.6 0-2.1-.6-2.1-2.1 0-4 0-8.1 0-12.1 0-1.6.6-2.1 2.1-2.1h9.9c0-.3 0-6.1 0-8.8 0-4 .7-7.8 2.7-11.3 2.1-3.6 5.1-6 8.9-7.4 2.5-.9 5-1.3 7.7-1.3h9.8c1.4 0 2 .6 2 2v11.4c0 1.4-.6 2-2 2-2.7 0-5.4 0-8.1.1-2.7 0-4.1 1.3-4.1 4.1-.1 3 0 5.9 0 9h11.6c1.6 0 2.2.6 2.2 2.2v12.1c0 1.6-.5 2.1-2.2 2.1-3.6 0-11.3 0-11.6 0v32.6c0 1.7-.5 2.3-2.3 2.3-4.2 0-8.3 0-12.5 0-1.5 0-2.1-.6-2.1-2.1 0-10.5 0-32.4 0-32.7z"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://pinterest.com/pin/create/button/?{{DomainName}}{{UpdateTitleSlug}}.html"
+                                        itemprop="pinterest" aria-label="instagram" rel="noreferrer" target="_blank">
+                                        <svg id="Bold" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                                            <path
+                                                d="m12.326 0c-6.579.001-10.076 4.216-10.076 8.812 0 2.131 1.191 4.79 3.098 5.633.544.245.472-.054.94-1.844.037-.149.018-.278-.102-.417-2.726-3.153-.532-9.635 5.751-9.635 9.093 0 7.394 12.582 1.582 12.582-1.498 0-2.614-1.176-2.261-2.631.428-1.733 1.266-3.596 1.266-4.845 0-3.148-4.69-2.681-4.69 1.49 0 1.289.456 2.159.456 2.159s-1.509 6.096-1.789 7.235c-.474 1.928.064 5.049.111 5.318.029.148.195.195.288.073.149-.195 1.973-2.797 2.484-4.678.186-.685.949-3.465.949-3.465.503.908 1.953 1.668 3.498 1.668 4.596 0 7.918-4.04 7.918-9.053-.016-4.806-4.129-8.402-9.423-8.402z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li><a href="https://wa.me/?text={{DomainName}}{{UpdateTitleSlug}}.html"
+                                        itemprop="whatsapp" aria-label="whatsapp" rel="noreferrer" target="_blank">
+                                        <svg id="Bold" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                                            <path
+                                                d="m17.507 14.307-.009.075c-2.199-1.096-2.429-1.242-2.713-.816-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.293-.506.32-.578.878-1.634.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.576-.05-.997-.042-1.368.344-1.614 1.774-1.207 3.604.174 5.55 2.714 3.552 4.16 4.206 6.804 5.114.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"/>
+                                            <path
+                                                d="m20.52 3.449c-7.689-7.433-20.414-2.042-20.419 8.444 0 2.096.549 4.14 1.595 5.945l-1.696 6.162 6.335-1.652c7.905 4.27 17.661-1.4 17.665-10.449 0-3.176-1.24-6.165-3.495-8.411zm1.482 8.417c-.006 7.633-8.385 12.4-15.012 8.504l-.36-.214-3.75.975 1.005-3.645-.239-.375c-4.124-6.565.614-15.145 8.426-15.145 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99z"/>
+                                        </svg>
+                                    </a></li>
+                                <li><a href="https://twitter.com/intent/tweet?text={{DomainName}}{{UpdateTitleSlug}}.html"
+                                        itemprop="twitter" aria-label="twitter" rel="noreferrer" target="_blank">
+                                        <svg id="Layer_1" enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                            <path id="_x30_4.Twitter"
+                                                d="m89.9 25.2c-3 1.3-6.1 2.2-9.4 2.6 3.4-2 6-5.2 7.2-9.1-3.2 1.9-6.7 3.2-10.4 4-3-3.2-7.3-5.2-12-5.2-9.1 0-16.4 7.4-16.4 16.4 0 1.3.1 2.5.4 3.7-13.6-.6-25.6-7.2-33.7-17.1-5.8 10.4.7 19 5 21.9-2.6 0-5.2-.8-7.4-2 0 8.1 5.7 14.8 13.1 16.3-1.6.5-5.2.8-7.4.3 2.1 6.5 8.2 11.3 15.3 11.4-5.6 4.4-13.8 7.9-24.3 6.8 7.3 4.7 15.9 7.4 25.2 7.4 30.2 0 46.6-25 46.6-46.6 0-.7 0-1.4-.1-2.1 3.4-2.5 6.2-5.4 8.3-8.7z"/>
+                                        </svg>
+                                    </a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{DomainName}}{{UpdateTitleSlug}}.html"
+                                        itemprop="linkedin" aria-label="linkedin" rel="noreferrer" target="_blank">
+                                        <svg id="Layer_1" enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                            <g id="_x31_0.Linkedin">
+                                                <path
+                                                    d="m90 90v-29.3c0-14.4-3.1-25.4-19.9-25.4-8.1 0-13.5 4.4-15.7 8.6h-.2v-7.3h-15.9v53.4h16.6v-26.5c0-7 1.3-13.7 9.9-13.7 8.5 0 8.6 7.9 8.6 14.1v26h16.6z"/>
+                                                <path d="m11.3 36.6h16.6v53.4h-16.6z"/>
+                                                <path
+                                                    d="m19.6 10c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.7 9.6 9.7 9.6-4.4 9.6-9.7-4.3-9.6-9.6-9.6z"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Update Detials Section End-->
+       <!--Footer sections-->
+       {{Footer}}
+       <!--Footer sections-end-->
+       <script>
+        //      ---------------------------------------------------------------nav bar script-------------------------------------------------------- 
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            body.classList.add("disabledScroll");
+        }
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+        }
+    
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+    </script>
+</body>

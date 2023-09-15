@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{GAtag}}
+    {{FacebookPixelCode}}
+    <meta charset="utf-8">
+    <title>{{SiteTitle}} - {{KeyLine}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="{{SiteTitle}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow " />
+    <link rel="canonical" href="{{Site-Url}}" />
+    <Meta name="language" content="English" />
+    <meta name="title" content="{{SiteTitle}} - {{KeyLine}}">
+    <meta name="description" content="{{SiteTitle}} - {{HomePageDescription}}" />
+    <meta name="keywords" content="{{HomePageKeyword}}" />
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{SiteTitle}} - {{KeyLine}}" />
+    <meta property="og:description" content="{{SiteTitle}} - {{HomePageDescription}}" />
+    <meta property="og:image" content="{{Logo}}" />
+    <meta property="og:url" content="{{Site-Url}}" />
+    <meta property="og:site_name" content="{{SiteTitle}}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{SiteTitle}}" />
+    <meta name="twitter:title" content="{{SiteTitle}} - {{KeyLine}}" />
+    <meta name="twitter:description" content="{{SiteTitle}} - {{HomePageDescription}}" />
+    <meta name="twitter:image" content="{{Logo}}" />
+
+    <link rel="icon" type="image/x-icon" href="{{Favicon}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    {{Style}}
+    {{Script}}
+</head>
+<style>
+    body {
+        background-color: var(--white);
+        margin: 0;
+        padding: 0;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    :root {
+        --primary-color: #040D12;
+        --second-color: #183D3D;
+        --third-color: #5C8374;
+        --fourth-color: #93B1A6;
+        --white: #ffffff;
+        --bgcolor: #f6f9fe;
+        --primary-font: 'Rubik', sans-serif;
+        --second-font: 'Sarabun', sans-serif;
+    }
+
+    /******************************************************************navbar css ************************************************************/
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    ::selection {
+        background: rgb(0, 123, 255, 0.3);
+    }
+
+    .content {
+        max-width: 1250px;
+        margin: auto;
+        padding: 0px 30px;
+    }
+
+    .about .content {
+        margin-top: 100px;
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        padding: 25px 0;
+        transition: all 0.3s ease;
+        background-color: var(--second-color);
+    }
+
+    .navbar.sticky {
+        padding: 10px 0;
+        background: var(--second-color);
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo a {
+        color: var(--white);
+        font-size: 35px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .navbar .menu-list {
+        display: inline-flex;
+    }
+
+    .menu-list li {
+        list-style: none;
+    }
+
+    .menu-list li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .menu-list li a:hover {
+        color: var(--fourth-color);
+    }
+
+    .about {
+        padding: 40px 0;
+    }
+
+    .about .title {
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .about p {
+        padding-top: 20px;
+        text-align: justify;
+    }
+
+    .icon {
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+    }
+
+
+
+    .icon.cancel-btn {
+        position: absolute;
+        right: 45px;
+        top: 9px;
+        background-color: white;
+    }
+
+    .navbar.sticky .icon.cancel-btn {
+        top: 10px;
+    }
+
+    @media (max-width: 868px) {
+        body.disabledScroll {
+            overflow: hidden;
+        }
+
+        .icon {
+            display: block;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            z-index: 9;
+        }
+
+        .icon.cancel-btn {
+            display: none;
+        }
+
+        .icon.cancel-btn.show {
+            display: block;
+        }
+
+        .icon.hide {
+            display: none;
+        }
+
+        .navbar .menu-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background: var(--second-color);
+            display: block;
+            padding: 40px 0;
+            text-align: center;
+            clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+            transition: all 0.3s ease;
+        }
+
+        .navbar.sticky .menu-list {
+            clip-path: circle(25px at calc(100% - 55px) calc(0% + 25px));
+        }
+
+        .navbar .menu-list.active {
+            clip-path: circle(75%);
+        }
+
+        .navbar .menu-list li {
+            margin-top: 45px;
+        }
+
+        .navbar .menu-list li a {
+            font-size: 23px;
+        }
+
+        .menu-btn {
+            background-color: white;
+            margin-right: 15px;
+        }
+    }
+
+    /****************************************************************slider css *************************************************************/
+    .slider1 {
+        width: 100%;
+    }
+
+    #slide {
+        width: 100%;
+    }
+
+    .mySlides {
+        position: relative;
+        display: none
+    }
+
+    .slider-content {
+        position: absolute;
+        top: 70%;
+        left: 2%;
+        background-color: var(--white);
+        opacity: 0.8;
+        border-radius: 20px;
+    }
+
+    .slider-content .title {
+        font-size: 40px;
+    }
+
+    .slider-content .decs {
+        font-size: 28px;
+    }
+
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 39%;
+        padding: 16px;
+        color: var(--white);
+        background-color: var(--fourth-color);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+    }
+
+    .next {
+        right: 4px;
+        border-radius: 3px 0 0 3px;
+    }
+
+
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+    .text {
+        border-radius: 30px;
+        background-color: var(--white);
+        opacity: 0.6;
+        position: absolute;
+        text-align: center;
+        bottom: 28%;
+        left: 2%;
+        font-size: 28px;
+    }
+
+    .text .title {
+        font-size: 40px;
+    }
+
+    /* .slider-content {
+    display: flex;
+} */
+
+
+
+
+    /* animation  */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        animation-name: fade;
+        animation-duration: 2s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+
+    @media (max-width: 500px) {
+        .slider-content {
+            display: none;
+        }
+
+        .pics {
+            height: 50vh;
+        }
+
+        .slider1 {
+            height: 50vh;
+        }
+
+        .prev,
+        .next {
+            /* width: auto; */
+            padding: 6px;
+        }
+    }
+
+    @media (min-width:501px) and (max-width:900px) {
+        .slider-content .title {
+            font-size: 28px;
+        }
+
+        .slider-content .decs {
+            font-size: 16px;
+        }
+    }
+
+
+    .pics {
+        border: 1px solid #494B55;
+        width: 99.90%;
+        height: 75vh;
+        object-fit: cover;
+    }
+
+    .slider1 {
+        height: 75vh;
+    }
+
+    /********************************************************** home about section here ********************************************************/
+    .about-us {
+        margin: 90px 0;
+    }
+
+    .about-us .container {
+        display: flex;
+        justify-content: center;
+        /* height: 364px; */
+    }
+
+    .about-us-inside {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .decs {
+        font-size: 18px;
+    }
+
+    .about-us-content {
+        padding-top: 0;
+        width: 540px;
+    }
+
+    .title p {
+        margin-top: 0;
+        font-size: 46px;
+    }
+
+    .about-us-img img {
+        border-radius: 15px;
+    }
+
+    /* Responsive  */
+    @media (max-width:550px) {
+        .about-us-img img {
+            width: 300px;
+            height: 250px;
+        }
+
+        .about-us-content {
+            width: 300px;
+        }
+    }
+
+    /******************************************************************counter css here  ******************************************************/
+    .counter2 {
+        padding-top: 10px;
+    }
+
+    .counter2 h2 {
+        font-size: 36px;
+    }
+
+    .counter-1 {
+        background-color: var(--second-color);
+        color: var(--white);
+        text-align: center;
+        height: 200px;
+        width: 100%;
+    }
+
+    @media (max-width:520px) {
+        .counter-1 {
+            height: 400px;
+        }
+    }
+
+    .counter-inside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
+        font-size: 22px;
+    }
+
+    /**********************************************************************our services********************************************************/
+
+
+    .Our-services {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 150px 0;
+        background-color: var(--white);
+    }
+
+    .Our-services-container {
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .our-services-main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .our-services-items {
+        margin: 40px;
+        position: relative;
+        max-width: 260px;
+        max-height: 350px;
+        box-shadow: 0 3 0px 40px -6px black;
+    }
+
+    .our-services-items-title {
+        display: block;
+        text-align: center;
+        color: #fff;
+        background-color: var(--third-color);
+        padding: 2%;
+        /* border-top-right-radius: 4px;
+    border-top-left-radius: 4px; */
+    }
+
+    .our-services-items img {
+        width: 100%;
+        height: 98%;
+        object-fit: cover;
+        display: block;
+        position: relative;
+    }
+
+    .our-services-items-desc {
+        position: absolute;
+        top: 62px;
+        opacity: 0;
+        padding: 18px 8%;
+        background-color: white;
+        overflow-y: scroll;
+        transition: 0.8s ease;
+        height: 0;
+    }
+
+    .our-services-items:hover .our-services-items-desc {
+        opacity: 0.85;
+        height: 84%;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        color: #fff;
+        margin: 40px 0 20px 0;
+        text-align: center;
+    }
+
+    /******************************************************************** News Letter **********************************************************/
+    .newsletter {
+        font-size: 25px;
+        background-color: var(--second-color);
+        color: white;
+        height: 140px
+    }
+
+    .newsletter-inside h3 {
+        padding-top: 15px;
+        text-align: center;
+        color: var(--fourth-color);
+    }
+
+
+    .form-row {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .form-row input {
+        width: 20%;
+        height: 3vh;
+        border-radius: 7px;
+        background-color: transparent;
+        border: 1px solid var(--white);
+        color: var(--white);
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    .form-row input:focus {
+        outline: 2px solid var(--fourth-color);
+    }
+
+    .form-row button:hover {
+        transition: 0.5s;
+        background-color: var(--fourth-color);
+        cursor: pointer;
+    }
+
+    .form-row button {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    @media(max-width: 325px) {
+        .newsletter .title {
+            margin: 8px;
+        }
+    }
+
+    @media (max-width:375px) {
+        .title h3 {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width:730px) {
+        .form-row input {
+            width: 40%;
+            height: 3vh;
+            border-radius: 7px;
+        }
+
+        .form-row button {
+            font-size: 12px;
+            padding: 3px;
+            border-radius: 8px;
+        }
+
+        .newsletter {
+            font-size: 25px;
+            background-color: var(--second-color);
+            color: white;
+            height: 16vh;
+        }
+    }
+
+
+    /***************************************************************updates ******************************************************************/
+    .updates-images img {
+        aspect-ratio: 1.3;
+        max-width: 447px;
+        max-height: 373px;
+        object-fit: cover;
+    }
+
+    .updates {
+        margin-top: 110px;
+        background-color: var(--white);
+    }
+
+    .updates-main {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+
+    }
+
+    .updates-content p {
+        padding: 0 5px;
+    }
+
+    .updates-items {
+        border: 1px solid grey;
+        border-radius: 8px;
+        background-color: rgba(250, 250, 245, 0.912);
+        box-shadow: 0 4px 8px 0 rgb(24 1 1 / 20%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    @media (max-width:425px) {
+        .updates-items {
+            width: 300px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width:375px) {
+        .updates-items {
+            width: 250px;
+            font-size: 12px;
+        }
+    }
+
+    .updates-date-share {
+        display: flex;
+        margin: 0 5px;
+        justify-content: space-between;
+    }
+
+    .updates-date-share1 a {
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(88, 88, 87);
+    }
+
+    .updates-date-share2 a {
+        text-decoration: none;
+    }
+
+    .updates-date-share2 a svg {
+        fill: var(--second-color);
+    }
+
+    .updates-date-share2 a svg:hover {
+        fill: var(--third-color);
+    }
+
+    .updates-date-share2 {
+        display: flex;
+        gap: 5px;
+    }
+
+    .btn1 {
+        font-size: 26px;
+        margin: 80px 0px;
+        text-decoration: none;
+        padding: 10px 35px;
+        background-color: black;
+        color: white;
+        width: fit-content;
+    }
+
+    .a-btn1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn1:hover {
+        transition: 0.5s;
+        background-color: var(--fourth-color);
+        color: black;
+    }
+
+    /************************************************************* slider*******************************************************************/
+    .slider-area h2 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 520;
+        letter-spacing: 2px;
+        margin: 90px 0 90px 0;
+        color: var(--primary-color);
+    }
+
+    .wrapper {
+        display: flex;
+        width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 2rem;
+        background: #faf6ed;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .item img {
+        object-fit: cover;
+    }
+
+    .item {
+        animation: animate 15s alternate linear infinite;
+    }
+
+    .wrapper:hover .item {
+        animation-play-state: paused;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-800px, 0, 0);
+        }
+    }
+
+    @media (max-width:768px) {
+        .slider-area h2 {
+            font-size: 30px;
+        }
+
+        .wrapper {
+            width: 95%;
+            border-radius: 0;
+            padding: 0;
+        }
+    }
+
+    /***************************************************************** Animation start******************************************************** */
+    @keyframes fade-left {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .active.fade-left {
+        animation: fade-left .8s ease-in;
+    }
+
+    .active.fade-right {
+        animation: fade-right .8s ease-in;
+    }
+
+    @keyframes fade-right {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .reveal {
+        position: relative;
+        opacity: 0;
+    }
+
+    .reveal.active {
+        opacity: 1;
+    }
+
+    .active.fade-bottom {
+        animation: fade-bottom 0.8s ease-in;
+    }
+
+    @keyframes fade-bottom {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* animation end---------------------------------------------------------------------------------- */
+    /* ********************************************************footer css**************************************************************/
+    .page-footer {
+        margin-top: 150px;
+        /* background-color: var(--fourth-color); */
+    }
+
+    .mt-4 {
+        background-color: var(--primary-color);
+    }
+
+    .row-1 {
+        background-color: var(--fourth-color);
+    }
+
+    .row {
+        /* background-color: var(--fourth-color); */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .col-lg-3 {
+        width: 285px;
+        height: 275px;
+    }
+
+    .col-lg-3 ul {
+        /* margin-left: 0; */
+        padding-left: 0;
+    }
+
+    .col-lg-3 li {
+        list-style: none;
+        padding-top: 5px;
+    }
+
+    .col-lg-3 a {
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .col-lg-3 h5 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .col-lg-3 p {
+        text-decoration: underline;
+    }
+
+    .col-lg-3 img {
+        padding: 39px;
+    }
+
+    .form-control {
+        width: 200px;
+        height: 20px;
+    }
+
+    .btn2 {
+        margin: 10px 0;
+        font-size: 16px;
+        width: fit-content;
+        background-color: var(--primary-color);
+        color: var(--white);
+        border-radius: 15px;
+        padding: 7px 25px;
+    }
+
+    .btn2:hover {
+        cursor: pointer;
+        background-color: var(--fourth-color);
+        color: var(--primary-color);
+
+    }
+
+    .phone {
+        display: flex;
+        gap: 2px;
+    }
+
+    .email {
+        display: flex;
+        gap: 2px;
+    }
+
+    .phone span {
+        padding-top: 14px;
+
+    }
+
+    .phone span:hover {
+        fill: var(--white);
+        cursor: pointer;
+    }
+
+    .email span:hover {
+        fill: var(--white);
+        cursor: pointer;
+    }
+
+    .email span {
+        padding-top: 14px;
+    }
+
+
+    .sosmed-button a {
+        text-decoration: none;
+        padding-left: 10px;
+        fill: var(--fourth-color);
+    }
+
+    .sosmed-button a:hover {
+        fill: var(--white);
+    }
+
+    .text-right {
+        padding-top: 15px;
+    }
+
+    .sosmed-button {
+        width: 230px;
+    }
+
+    .mt-4 p {
+        color: var(--white);
+    }
+
+    .mt-4 span {
+        color: red;
+    }
+</style>
+<body itemscope="" itemtype="https://schema.org/LocalBusiness"> 
+     <!--Header sections-->
+     {{Header}}
+     <!--Header sections-end-->
+
+     <!-- slider section start -->
+    <div class="slider1" id="IndexBannerSliderSection">
+        <div class="ss-container" id="IndexBannerSliderParent">
+            <div class="mySlides fade" itemprop="image">
+                <img src="{{SliderImage}}" srcset="{{SliderImageSrcSet}}"
+                    sizes="(max-width: 600px) 480px, 800px" alt="{{SliderTitle}}" class="pics" />
+                <div class="slider-content">
+                    <div class="title">{{SliderTitle}}</div>
+                    <p class="decs">{{SliderDescription}}</p>
+                </div>
+            </div>
+           
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+
+        <!--    Putting in the click dots   -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+    <!-- slider section end -->
+
+
+
+
+    <!-- Home About Section Here-->
+    <br>
+    <div class="about-us spad">
+        <div class="container">
+            <div class="about-us-inside">
+                <div class="about-us-img">
+                    <img src="{{HomeImage}}" srcset="{{HomeImage1SrcSet}}"
+                        sizes="(max-width: 600px) 480px, 800px" alt="{{HomeTitle}}" width="540px" height="360px"
+                        alt="Social-Parsh" itemprop="image">
+                </div>
+                <div class="about-us-content">
+                    <div class="title">
+                        <p>{{HomeTitle}}</p>
+                    </div>
+                    <div class="decs">
+                        <p>{{HomeDescription}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home About Section End-->
+
+
+    <!-- Counter Number Here-->
+    <div class="counter-1 counter "id="IndexCounterSection">
+        <div class="counter2 container">
+            <h2>Relative Customer</h2>
+            <div class="counter-inside" id="IndexCounterParent">
+                <div class="count-up">
+                    <div class="counter-count" data-target="{{Count}}">0</div>
+                    <div class="counter-text">{{Title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Conter Number End-->
+
+
+
+    <!-- Our Services -->
+    <div class="Our-services reveal fade-right "id="IndexServicesSection">
+        <div class="Our-services-container container">
+            <div class="our-services-main" id="IndexServicesParent">
+                <div class="our-services-items" id="IndexPageServicesImage">
+                    <h2 class="our-services-items-title">{{HomeCategoryName}}</h2>
+                    <img src="{{HomeProductImage}}" loading="lazy" alt="{{HomeProductName}}" width="421px" height="314px"
+                        itemprop="image">
+                    <p class="our-services-items-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+                        dolore sapiente blanditiis magni dolor aliquid distinctio ut amet possimus doloremque
+                        praesentium vero, natus placeat fuga doloribus, consectetur temporibus tempora laudantium!</p>
+                </div>
+                <div class="services-btn" style="display: none;">
+                    <a href="{{HomeProductSlug}}.html" itemprop="url" class="text-link">View {{BusinessTypes}}</a>
+                    <button type="button" class="share-btn" aria-label="share" data-toggle="modal"
+                        data-target="#{{HomeProductSlug}}Modal">
+                        <svg viewBox="-21 0 512 512">
+                            <path
+                                d="m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0" />
+                            <path
+                                d="m384 170.667969c-47.0625 0-85.332031-38.273438-85.332031-85.335938 0-47.058593 38.269531-85.332031 85.332031-85.332031s85.332031 38.273438 85.332031 85.332031c0 47.0625-38.269531 85.335938-85.332031 85.335938zm0-138.667969c-29.417969 0-53.332031 23.9375-53.332031 53.332031 0 29.398438 23.914062 53.335938 53.332031 53.335938s53.332031-23.9375 53.332031-53.335938c0-29.394531-23.914062-53.332031-53.332031-53.332031zm0 0" />
+                            <path
+                                d="m453.332031 426.667969c0 38.289062-31.039062 69.332031-69.332031 69.332031s-69.332031-31.042969-69.332031-69.332031c0-38.292969 31.039062-69.335938 69.332031-69.335938s69.332031 31.042969 69.332031 69.335938zm0 0" />
+                            <path
+                                d="m384 512c-47.0625 0-85.332031-38.273438-85.332031-85.332031 0-47.0625 38.269531-85.335938 85.332031-85.335938s85.332031 38.273438 85.332031 85.335938c0 47.058593-38.269531 85.332031-85.332031 85.332031zm0-138.667969c-29.417969 0-53.332031 23.9375-53.332031 53.335938 0 29.394531 23.914062 53.332031 53.332031 53.332031s53.332031-23.9375 53.332031-53.332031c0-29.398438-23.914062-53.335938-53.332031-53.335938zm0 0" />
+                            <path
+                                d="m154.667969 256c0 38.292969-31.042969 69.332031-69.335938 69.332031-38.289062 0-69.332031-31.039062-69.332031-69.332031s31.042969-69.332031 69.332031-69.332031c38.292969 0 69.335938 31.039062 69.335938 69.332031zm0 0" />
+                            <path
+                                d="m85.332031 341.332031c-47.058593 0-85.332031-38.269531-85.332031-85.332031s38.273438-85.332031 85.332031-85.332031c47.0625 0 85.335938 38.269531 85.335938 85.332031s-38.273438 85.332031-85.335938 85.332031zm0-138.664062c-29.417969 0-53.332031 23.933593-53.332031 53.332031s23.914062 53.332031 53.332031 53.332031c29.421875 0 53.335938-23.933593 53.335938-53.332031s-23.914063-53.332031-53.335938-53.332031zm0 0" />
+                            <path
+                                d="m135.703125 245.761719c-7.425781 0-14.636719-3.863281-18.5625-10.773438-5.824219-10.21875-2.238281-23.253906 7.980469-29.101562l197.949218-112.851563c10.21875-5.867187 23.253907-2.28125 29.101563 7.976563 5.824219 10.21875 2.238281 23.253906-7.980469 29.101562l-197.953125 112.851563c-3.328125 1.898437-6.953125 2.796875-10.535156 2.796875zm0 0" />
+                            <path
+                                d="m333.632812 421.761719c-3.585937 0-7.210937-.898438-10.539062-2.796875l-197.953125-112.851563c-10.21875-5.824219-13.800781-18.859375-7.976563-29.101562 5.800782-10.238281 18.855469-13.84375 29.097657-7.976563l197.953125 112.851563c10.21875 5.824219 13.800781 18.859375 7.976562 29.101562-3.945312 6.910157-11.15625 10.773438-18.558594 10.773438zm0 0" />
+                        </svg>
+                    </button>
+                    <div class="modal" id="{{HomeProductSlug}}Modal" tabindex="-1" role="dialog"
+                        aria-labelledby="{{HomeProductSlug}}ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h5 class="title">Share this on</h5>
+
+                                    <div class="social-media">
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u={{DomainName}}{{HomeProductSlug}}.html"
+                                                    itemprop="facebook" aria-label="facebook" rel="noreferrer"
+                                                    target="_blank">
+                                                    <svg id="Layer_1" enable-background="new 0 0 100 100"
+                                                        viewBox="0 0 100 100">
+                                                        <g id="_x30_1._Facebook">
+                                                            <path id="Icon_11_"
+                                                                d="m40.4 55.2c-.3 0-6.9 0-9.9 0-1.6 0-2.1-.6-2.1-2.1 0-4 0-8.1 0-12.1 0-1.6.6-2.1 2.1-2.1h9.9c0-.3 0-6.1 0-8.8 0-4 .7-7.8 2.7-11.3 2.1-3.6 5.1-6 8.9-7.4 2.5-.9 5-1.3 7.7-1.3h9.8c1.4 0 2 .6 2 2v11.4c0 1.4-.6 2-2 2-2.7 0-5.4 0-8.1.1-2.7 0-4.1 1.3-4.1 4.1-.1 3 0 5.9 0 9h11.6c1.6 0 2.2.6 2.2 2.2v12.1c0 1.6-.5 2.1-2.2 2.1-3.6 0-11.3 0-11.6 0v32.6c0 1.7-.5 2.3-2.3 2.3-4.2 0-8.3 0-12.5 0-1.5 0-2.1-.6-2.1-2.1 0-10.5 0-32.4 0-32.7z"/>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://pinterest.com/pin/create/button/?{{DomainName}}{{HomeProductSlug}}.html"
+                                                    itemprop="pinterest" aria-label="instagram" rel="noreferrer"
+                                                    target="_blank">
+                                                    <svg id="Bold" enable-background="new 0 0 24 24"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="m12.326 0c-6.579.001-10.076 4.216-10.076 8.812 0 2.131 1.191 4.79 3.098 5.633.544.245.472-.054.94-1.844.037-.149.018-.278-.102-.417-2.726-3.153-.532-9.635 5.751-9.635 9.093 0 7.394 12.582 1.582 12.582-1.498 0-2.614-1.176-2.261-2.631.428-1.733 1.266-3.596 1.266-4.845 0-3.148-4.69-2.681-4.69 1.49 0 1.289.456 2.159.456 2.159s-1.509 6.096-1.789 7.235c-.474 1.928.064 5.049.111 5.318.029.148.195.195.288.073.149-.195 1.973-2.797 2.484-4.678.186-.685.949-3.465.949-3.465.503.908 1.953 1.668 3.498 1.668 4.596 0 7.918-4.04 7.918-9.053-.016-4.806-4.129-8.402-9.423-8.402z" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li><a href="https://wa.me/?text={{DomainName}}{{HomeProductSlug}}.html"
+                                                    itemprop="whatsapp" aria-label="whatsapp" rel="noreferrer"
+                                                    target="_blank">
+                                                    <svg id="Bold" enable-background="new 0 0 24 24"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="m17.507 14.307-.009.075c-2.199-1.096-2.429-1.242-2.713-.816-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.293-.506.32-.578.878-1.634.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.576-.05-.997-.042-1.368.344-1.614 1.774-1.207 3.604.174 5.55 2.714 3.552 4.16 4.206 6.804 5.114.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z"/>
+                                                        <path
+                                                            d="m20.52 3.449c-7.689-7.433-20.414-2.042-20.419 8.444 0 2.096.549 4.14 1.595 5.945l-1.696 6.162 6.335-1.652c7.905 4.27 17.661-1.4 17.665-10.449 0-3.176-1.24-6.165-3.495-8.411zm1.482 8.417c-.006 7.633-8.385 12.4-15.012 8.504l-.36-.214-3.75.975 1.005-3.645-.239-.375c-4.124-6.565.614-15.145 8.426-15.145 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99z"/>
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="https://twitter.com/intent/tweet?text={{DomainName}}{{HomeProductSlug}}.html"
+                                                    itemprop="twitter" aria-label="twitter" rel="noreferrer"
+                                                    target="_blank">
+                                                    <svg id="Layer_1" enable-background="new 0 0 100 100"
+                                                        viewBox="0 0 100 100">
+                                                        <path id="_x30_4.Twitter"
+                                                            d="m89.9 25.2c-3 1.3-6.1 2.2-9.4 2.6 3.4-2 6-5.2 7.2-9.1-3.2 1.9-6.7 3.2-10.4 4-3-3.2-7.3-5.2-12-5.2-9.1 0-16.4 7.4-16.4 16.4 0 1.3.1 2.5.4 3.7-13.6-.6-25.6-7.2-33.7-17.1-5.8 10.4.7 19 5 21.9-2.6 0-5.2-.8-7.4-2 0 8.1 5.7 14.8 13.1 16.3-1.6.5-5.2.8-7.4.3 2.1 6.5 8.2 11.3 15.3 11.4-5.6 4.4-13.8 7.9-24.3 6.8 7.3 4.7 15.9 7.4 25.2 7.4 30.2 0 46.6-25 46.6-46.6 0-.7 0-1.4-.1-2.1 3.4-2.5 6.2-5.4 8.3-8.7z"/>
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{DomainName}}{{HomeProductSlug}}.html"
+                                                    itemprop="linkedin" aria-label="linkedin" rel="noreferrer"
+                                                    target="_blank">
+                                                    <svg id="Layer_1" enable-background="new 0 0 100 100"
+                                                        viewBox="0 0 100 100">
+                                                        <g id="_x31_0.Linkedin">
+                                                            <path
+                                                                d="m90 90v-29.3c0-14.4-3.1-25.4-19.9-25.4-8.1 0-13.5 4.4-15.7 8.6h-.2v-7.3h-15.9v53.4h16.6v-26.5c0-7 1.3-13.7 9.9-13.7 8.5 0 8.6 7.9 8.6 14.1v26h16.6z"/>
+                                                            <path d="m11.3 36.6h16.6v53.4h-16.6z"/>
+                                                            <path
+                                                                d="m19.6 10c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.7 9.6 9.7 9.6-4.4 9.6-9.7-4.3-9.6-9.6-9.6z"/>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------- Our Services end -------------------------------------------------------->
+
+
+
+    <!--------------------------------------------------------------- News Letter Here -------------------------------------------------------->
+    <div class="newsletter">
+        <div class="container">
+            <div class="newsletter-inside">
+                <h3 class="title">Subscribe Our Newsletter</h3>
+                <form method="post" id="newsletter-form">
+                    <div class="form-row">
+                        <input type="text" name="Email" id="newsletter-email-input" placeholder="Enter Your Email Here"
+                            class="form-control" required="*">
+                        <button type="submit" class="subcribe" name="submit">Subscribe Now</button>
+                    </div>
+                </form>
+            </div>
+            <div id="NewsLetterFormResponse"></div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------- News Letter End------------------------------------------------------->
+
+    <!------------------------------------------------------------------ updates here---------------------------------------------------------->
+    <!-- Updates Here-->
+    <div class="updates spad reveal fade-left" id="IndexUpdateSection">
+        <div class="container">
+            <div class="updates-main" id="IndexUpdateParent">
+                <div class="updates-items" itemscope="" itemtype="http://schema.org/BlogPosting">
+                    <div class="updates-images">
+                        <img src="{{UpdateImage}}" loading="lazy" srcset="{{UpdateImageSrcSet}}" width="100%" height="100%" alt="{{UpdateTitle}}" itemprop="image">
+                    </div>
+                    <div class="updates-content">
+                        <div class="updates-date-share">
+                            <div class="updates-date-share1"><a href="{{UpdateTitleSlug}}.html" class="title"
+                                    itemprop="headline">{{UpdateTitle}}</a></div>
+                            <div class="updates-date-share2" data-target="#{{UpdateTitleSlug}}Modal" id="{{UpdateTitleSlug}}Modal"><a href="https://www.facebook.com/sharer/sharer.php?u={{DomainName}}{{UpdateTitleSlug}}.html" itemprop="facebook" aria-label="facebook"
+                                    rel="noreferrer" target="_blank" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1"
+                                        enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                        <g id="_x30_1._Facebook">
+                                            <path id="Icon_11_"
+                                                d="m40.4 55.2c-.3 0-6.9 0-9.9 0-1.6 0-2.1-.6-2.1-2.1 0-4 0-8.1 0-12.1 0-1.6.6-2.1 2.1-2.1h9.9c0-.3 0-6.1 0-8.8 0-4 .7-7.8 2.7-11.3 2.1-3.6 5.1-6 8.9-7.4 2.5-.9 5-1.3 7.7-1.3h9.8c1.4 0 2 .6 2 2v11.4c0 1.4-.6 2-2 2-2.7 0-5.4 0-8.1.1-2.7 0-4.1 1.3-4.1 4.1-.1 3 0 5.9 0 9h11.6c1.6 0 2.2.6 2.2 2.2v12.1c0 1.6-.5 2.1-2.2 2.1-3.6 0-11.3 0-11.6 0v32.6c0 1.7-.5 2.3-2.3 2.3-4.2 0-8.3 0-12.5 0-1.5 0-2.1-.6-2.1-2.1 0-10.5 0-32.4 0-32.7z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="https://pinterest.com/pin/create/button/?{{DomainName}}{{UpdateTitleSlug}}.html" itemprop="instagram" aria-label="instagram" rel="noreferrer"
+                                    target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.9">
+                                        <path
+                                            d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0">
+                                        </path>
+                                        <path
+                                            d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0">
+                                        </path>
+                                        <path
+                                            d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://wa.me/?text={{DomainName}}{{UpdateTitleSlug}}.html" itemprop="whatsapp" aria-label="whatsapp" rel="noreferrer" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="m17.507 14.307-.009.075c-2.199-1.096-2.429-1.242-2.713-.816-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.293-.506.32-.578.878-1.634.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.576-.05-.997-.042-1.368.344-1.614 1.774-1.207 3.604.174 5.55 2.714 3.552 4.16 4.206 6.804 5.114.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345z">
+                                        </path>
+                                        <path
+                                            d="m20.52 3.449c-7.689-7.433-20.414-2.042-20.419 8.444 0 2.096.549 4.14 1.595 5.945l-1.696 6.162 6.335-1.652c7.905 4.27 17.661-1.4 17.665-10.449 0-3.176-1.24-6.165-3.495-8.411zm1.482 8.417c-.006 7.633-8.385 12.4-15.012 8.504l-.36-.214-3.75.975 1.005-3.645-.239-.375c-4.124-6.565.614-15.145 8.426-15.145 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text={{DomainName}}{{UpdateTitleSlug}}.html" itemprop="twitter" aria-label="twitter" rel="noreferrer" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1"
+                                        enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                        <path id="_x30_4.Twitter"
+                                            d="m89.9 25.2c-3 1.3-6.1 2.2-9.4 2.6 3.4-2 6-5.2 7.2-9.1-3.2 1.9-6.7 3.2-10.4 4-3-3.2-7.3-5.2-12-5.2-9.1 0-16.4 7.4-16.4 16.4 0 1.3.1 2.5.4 3.7-13.6-.6-25.6-7.2-33.7-17.1-5.8 10.4.7 19 5 21.9-2.6 0-5.2-.8-7.4-2 0 8.1 5.7 14.8 13.1 16.3-1.6.5-5.2.8-7.4.3 2.1 6.5 8.2 11.3 15.3 11.4-5.6 4.4-13.8 7.9-24.3 6.8 7.3 4.7 15.9 7.4 25.2 7.4 30.2 0 46.6-25 46.6-46.6 0-.7 0-1.4-.1-2.1 3.4-2.5 6.2-5.4 8.3-8.7z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{DomainName}}{{UpdateTitleSlug}}.html" itemprop="linkedin" aria-label="linkedin" rel="noreferrer" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1"
+                                        enable-background="new 0 0 100 100" viewBox="0 0 100 100">
+                                        <g id="_x31_0.Linkedin">
+                                            <path
+                                                d="m90 90v-29.3c0-14.4-3.1-25.4-19.9-25.4-8.1 0-13.5 4.4-15.7 8.6h-.2v-7.3h-15.9v53.4h16.6v-26.5c0-7 1.3-13.7 9.9-13.7 8.5 0 8.6 7.9 8.6 14.1v26h16.6z">
+                                            </path>
+                                            <path d="m11.3 36.6h16.6v53.4h-16.6z"></path>
+                                            <path
+                                                d="m19.6 10c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.7 9.6 9.7 9.6-4.4 9.6-9.7-4.3-9.6-9.6-9.6z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="decs" itemprop="description">{{UpdateDescription}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="a-btn1">
+                <a href="update-page-1.html" class="btn1">View All Updates</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Updateds End-->
+
+    <!--Logo Slider sections-->
+
+    <div class="slider-area" id="IndexLogoSliderSection">
+        <h2>{{ImageSliderTitle}}</h2>
+        <div class="wrapper" id="IndexLogoSliderParent">
+            <div class="item"><img alt="{{ImageSliderName}}" loading="lazy" srcset="{{ImageSliderPathSrcSet}}" src="{{ImageSliderPath}}" width="200px" height="84px"><div style="display: none;" class="logo-tag">{{ImageSliderName}}</div></div>
+            
+        </div>
+    </div>
+     <!--Logo Slider sections-end-->
+      <!--Footer sections-->    
+      {{Footer}}
+      <!--Footer sections-end-->
+      <script>
+         // -----------------------------------------------------------slider script----------------------------------------------------
+         var slideIndex = 0;
+        showSlides();
+        //add the global timer variable
+        var slides, dots, timer;
+
+        function showSlides() {
+            var i;
+            slides = document.getElementsByClassName("mySlides");
+            dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            //put the timeout in the timer variable
+            timer = setTimeout(showSlides, 3000); // Change image every 8 seconds
+        }
+
+        function plusSlides(position) {
+            //clear/stop the timer
+            clearTimeout(timer);
+            slideIndex += position;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            else if (slideIndex < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            timer = setTimeout(showSlides, 2000);
+        }
+
+        function currentSlide(index) {
+            //clear/stop the timer
+            clearTimeout(timer);
+            if (index > slides.length) { index = 1 }
+            else if (index < 1) { index = slides.length }
+            //set the slideIndex with the index of the function
+            slideIndex = index;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[index - 1].style.display = "block";
+            dots[index - 1].className += " active";
+            //create a new timer
+            timer = setTimeout(showSlides, 2000);
+        }
+
+
+
+
+
+
+
+        //      ---------------------------------------------------------------nav bar script-------------------------------------------------------- 
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            body.classList.add("disabledScroll");
+        }
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+        }
+
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+        //---------------------------------------------counter-----------------------------------------------------------
+
+        const counters = document.querySelectorAll('.counter-count');
+        const speed = 200; // The lower the slower
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = '+' + (Math.floor(count + inc));
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = '+' + target;
+                    }
+                };
+                updateCount();
+            });
+        }
+        window.addEventListener('scroll', startCounters, {
+            once: true
+        });
+        // scroll reveal-------------------------------------------------------------------------- 
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+      </script>
+</body>
+</html>

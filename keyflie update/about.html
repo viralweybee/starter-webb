@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{GAtag}}
+    {{FacebookPixelCode}}
+    <meta charset="utf-8">
+    <title>{{AboutPageTitle}} - {{SiteTitle}} - {{AboutTitle1}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="{{SiteTitle}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow " />
+    <link rel="canonical" href="{{Site-Url}}" />
+    <Meta name="language" content="English" />
+    <meta name="title" content="{{AboutPageTitle}} - {{SiteTitle}} - {{AboutTitle1}}">
+    <meta name="description" content="{{AboutTitle1}} - {{AboutPageDescription}}" />
+    <meta name="keywords" content="{{AboutPageKeyword}}" />
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{AboutPageTitle}} - {{SiteTitle}} - {{AboutTitle1}}" />
+    <meta property="og:description" content="{{AboutTitle1}} - {{AboutPageDescription}}" />
+    <meta property="og:image" content="{{Logo}}" />
+    <meta property="og:url" content="{{Site-Url}}" />
+    <meta property="og:site_name" content="{{SiteTitle}}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{SiteTitle}}" />
+    <meta name="twitter:title" content="{{AboutPageTitle}} - {{SiteTitle}} - {{AboutTitle1}}" />
+    <meta name="twitter:description" content="{{AboutTitle1}} - {{AboutPageDescription}}" />
+    <meta name="twitter:image" content="{{Logo}}" />
+
+    <link rel="icon" type="image/x-icon" href="{{Favicon}}">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{PrimaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family={{SecondaryFont}}:wght@300;400;500;600;700;800;900&display=swap">
+    </noscript>
+    <!-- {{Style}}
+    {{Script}} -->
+</head>
+<style>
+    body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+:root {
+    --primary-color: #040D12;
+    --second-color: #183D3D;
+    --third-color:#5C8374;
+    --fourth-color:#93B1A6;
+    --white: #ffffff;
+    --bgcolor: #cfe9e0;
+    --primary-font: 'Rubik', sans-serif;
+    --second-font: 'Sarabun', sans-serif;
+}
+
+/******************************************************************navbar css ************************************************************/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::selection {
+    background: rgb(0, 123, 255, 0.3);
+}
+
+.content {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+.about .content {
+    margin-top: 100px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+    background-color: var(--second-color);
+}
+
+.navbar.sticky {
+    padding: 10px 0;
+    background: var(--second-color);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color:var(--white);
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: var(--fourth-color);
+}
+
+.about {
+    padding: 40px 0;
+}
+
+.about .title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about p {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 45px;
+    top: 9px;
+    background-color: white;
+}
+
+.navbar.sticky .icon.cancel-btn {
+    top: 10px;
+}
+
+@media (max-width: 868px) {
+    body.disabledScroll {
+        overflow: hidden;
+    }
+
+    .icon {
+        display: block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        z-index: 9;
+    }
+
+    .icon.cancel-btn {
+        display: none;
+    }
+
+    .icon.cancel-btn.show {
+        display: block;
+    }
+
+    .icon.hide {
+        display: none;
+    }
+
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: var(--second-color);
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+        transition: all 0.3s ease;
+    }
+
+    .navbar.sticky .menu-list {
+        clip-path: circle(25px at calc(100% - 55px) calc(0% + 25px));
+    }
+
+    .navbar .menu-list.active {
+        clip-path: circle(75%);
+    }
+
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+
+    .navbar .menu-list li a {
+        font-size: 23px;
+    }
+    .menu-btn{
+        background-color: white;
+        margin-right: 15px;
+    }
+}
+/* About us--------------------------------------------------------------- */
+.ab{
+    width: 100%;
+    height: 100px;
+    background-color: var(--fourth-color);
+    font-size: 35px;
+    text-align: center;
+    padding-top: 40px;
+    color: var(--white);
+}
+/* Home about section -------------------------------------------------- */
+.about-us {
+    margin: 90px 0;
+}
+
+.about-us .container {
+    display: flex;
+    justify-content: center;
+}
+
+.about-us-inside {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.decs {
+    font-size: 18px;
+}
+
+.about-us-content {
+    padding-top: 0;
+    width: 540px;
+}
+
+.title p  {
+    margin-top: 0;
+    font-size: 46px;
+}
+
+.about-us-img img {
+    border-radius: 15px;
+}
+@media (max-width:550px){
+    .about-us-img img{
+      width: 300px;
+      height: 250px;
+    }
+    .about-us-content{
+      width: 300px;
+    }
+  }
+/* our mission section -------------------------------------------------------*/
+.vision-mission .container{
+    display: flex;
+    justify-content: center;
+    background-color: var(--bgcolor)
+}
+.vision-mission-items{
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.about-vm-image{
+    width: 400px;
+}
+.about-vm-content{
+    width: 700px;
+    padding: 50px;
+}
+.about-vm-content h2{
+    text-align: center;
+}
+@media (max-width:1260px){
+    .vision-mission-items{
+        margin: 0;
+        justify-content: center;
+    }
+}
+@media (max-width:750px){
+    .about-vm-content{
+        width: 450px;
+        padding: 30px;
+    }
+}
+@media (max-width:530px){
+    .about-vm-content{
+        width: 300px;
+        padding: 20px;
+    }
+    .about-vm-image{
+        width: 300px;
+    }
+    .about-vm-image img{
+        width: 300px;
+        height: 250px;
+    }
+}
+
+/* slider-1 css -----------------------------------------------------------------------------------------------------------------------*/
+.our-team h2{
+    text-align: center;
+    font-size: 28px;
+}
+.our-team .container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: 0%;
+  }
+  .wrapper i:last-child{
+    right: 0%;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: var(--white);
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  .carousel .card .img {
+    background: var(--bgcolor);
+    height: 148px;
+    width: 148px;
+    border-radius: 50%;
+  }
+  .card .img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+  }
+  .carousel .card h2 {
+    font-weight: 500;
+    font-size: 20px;
+    margin: 30px 0 5px;
+  }
+  .carousel .card span {
+    color: #6A6D78;
+    font-size: 1.31rem;
+  }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+/*  slider 2 --------------------------------------------------------------------------------------------------------------------- */
+.section h2{
+    text-align: center;
+    font-size: 28px;
+}
+.slider {
+    max-width: 100rem;
+    height: 50rem;
+    margin: 0 auto;
+    position: relative;
+
+    /* IN THE END */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 45rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* THIS creates the animation! */
+    transition: transform 1s;
+}
+
+.slide>img {
+    /* Only for images that have different size than slide */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    color: #333;
+    border-radius: 50%;
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 2.25rem;
+    cursor: pointer;
+}
+
+.slider__btn--left {
+    left: 8%;
+    transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+    right: 8%;
+    transform: translate(50%, -50%);
+}
+
+.dots {
+    position: absolute;
+    top:85%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dots__dot {
+    border: none;
+    background-color: #b9b9b9;
+    opacity: 0.7;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    margin-right: 1.75rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.dots__dot:last-child {
+    margin: 0;
+}
+
+.dots__dot--active {
+    /* background-color: #fff; */
+    background-color: #888;
+    opacity: 1;
+}
+
+/* TESTIMONIALS */
+.testimonial {
+    width: 65%;
+    position: relative;
+}
+
+.testimonial::before {
+    content: '\201C';
+    position: absolute;
+    top: -5.7rem;
+    left: -6.8rem;
+    line-height: 1;
+    font-size: 20px;
+    font-family: inherit;
+    color: var(--color-primary);
+    z-index: -1;
+}
+
+.testimonial__header {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial__text {
+    font-size: 20px;
+    margin-bottom: 3.5rem;
+    color: #666;
+}
+
+.testimonial__author {
+    margin-left: 3rem;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    column-gap: 2rem;
+}
+@media (max-width:400px){
+    .testimonial__author{
+        margin-left: 2rem;
+    }
+    .dots {
+        position: absolute;
+        top:98%;
+        
+    }
+}
+.testimonial__photo {
+    grid-row: 1 / span 2;
+    width: 6.5rem;
+    border-radius: 50%;
+}
+
+.testimonial__name {
+    font-size: 23px;
+    font-weight: 500;
+    align-self: end;
+    margin: 0;
+}
+
+.testimonial__location {
+    font-size: 21px;
+}
+
+.section__title--testimonials {
+    margin-bottom: 4rem;
+}
+/* footer css */
+.page-footer{
+    margin-top: 80px;
+}
+.mt-4{
+    background-color: var(--primary-color);
+}
+.row-1{
+    background-color: var(--fourth-color);
+}
+.row{
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.col-lg-3{
+    width: 285px;
+    height: 275px;
+}
+.col-lg-3 ul{
+    /* margin-left: 0; */
+    padding-left: 0;
+}
+.col-lg-3 li {
+    list-style: none;
+    padding-top: 5px;
+}
+.col-lg-3 a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.col-lg-3 h5{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.col-lg-3 p{
+    text-decoration: underline;
+}
+.col-lg-3 img{
+    padding: 39px;
+}
+.form-control{
+    width: 200px;
+    height: 20px;
+}
+.btn2{
+    margin: 10px 0;
+    font-size: 16px;
+   width: fit-content;
+   background-color:var(--primary-color);
+   color:var(--white);
+   border-radius: 15px;
+   padding: 7px 25px;
+}   
+.btn2:hover{
+    cursor: pointer;
+   background-color: var(--fourth-color);
+   color: var(--primary-color);
+}
+.phone{
+    display: flex;
+    gap: 2px;
+}
+.email{
+    display: flex;
+    gap: 2px;
+}
+.phone span{
+   padding-top: 14px;
+    
+}
+.phone span:hover{
+    fill: var(--white);
+    cursor: pointer;
+}
+.email span:hover{
+    fill: var(--white);
+    cursor: pointer;
+}
+.email span{
+    padding-top: 14px;
+}
+/* copy right */
+.sosmed-button a{
+    text-decoration: none;
+    padding-left: 10px;
+    fill: var(--fourth-color);
+}
+.sosmed-button a:hover{
+    fill: var(--white);
+}
+.text-right{
+    padding-top: 15px;
+}
+.sosmed-button{
+    /* border: 1px solid black; */
+    width: 230px;
+}
+.mt-4 p{
+    color: var(--white);
+}
+.mt-4 span{
+   color: red;
+}
+</style>
+
+<body>
+     <!--Header sections-->
+     {{Header}}
+     <!--Header sections-end-->
+     <!-- About us -->
+     <div class="ab">
+        <div class="container">
+            <span>About us</span>
+        </div>
+    </div>
+    <!-- Home section  -->
+    <!-- Home About Section Here-->
+    <br>
+    <div class="about-us spad">
+        <div class="container">
+            <div class="about-us-inside">
+                <div class="about-us-img">
+                    <img src="{{AboutImage1}}" srcset="{{AboutImage1SrcSet}}"
+                        sizes="(max-width: 600px) 480px, 800px"  alt="{{AboutTitle1}}" width="540px" height="360px"
+                        itemprop="image">
+                </div>
+                <div class="about-us-content">
+                    <div class="title">
+                        <p>{{AboutTitle1}}</p>
+                    </div>
+                    <div class="decs">
+                        <p>{{AboutDescription1}}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Home About Section End-->
+    <!-- Our mission  -->
+    <div class="vision-mission spad">
+        <div class="container">
+            <div class="vision-mission-inner">
+                <div class="vision-mission-items">
+                    <div class="about-vm-image">
+                        <img src="{{AboutImage2}}" loading="lazy" srcset="{{AboutImage2SrcSet}}" alt="{{AboutTitle2}}" width="400px" height="350px">
+                    </div>
+                    <div class="about-vm-content">
+                        <h2 class="title">{{AboutTitle2}}</h2>
+                        <p>{{AboutDescription2}}</p>
+                    </div>
+                </div>
+                <div class="vision-mission-items">
+                    <div class="about-vm-content">
+                        <h2 class="title">{{AboutTitle3}}</h2>
+                        <p>{{AboutDescription3}}</p>
+                    </div>
+                    <div class="about-vm-image">
+                        <img src="{{AboutImage3}}" loading="lazy" srcset="{{AboutImage3SrcSet}}" alt="{{AboutTitle3}}"  width="400px" height="350px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our mission section end -->
+    <!-- slider section 1 -->
+    <div class="our-team" id="AboutTeamSection">
+        <h2 class="title">{{TeamTitle}}</h2>
+        <div class="container">
+            <div class="wrapper" id="AboutTeamParent">
+                <i id="left" class="fa-solid fa-angle-left">&#10094;</i>
+                <ul class="carousel team-member" itemprop="founder" itemscope itemtype="http://schema.org/Person">
+                    <li class="card">
+                        <div class="img"><img src="{{MemberImage}}" loading="lazy" srcset="{{MemberImageSrcSet}}" width="100%" height="100%"   alt="{{MemberName}}" draggable="false"></div>
+                        <h2>{{MemberName}}</h2>
+                        <span>{{Designation}}</span>
+                    </li>
+                    
+                </ul>
+                <i id="right" class="fa-solid fa-angle-right">&#10095;</i>
+            </div>
+        </div>
+    </div>
+    <!-- slider section end -->
+    <!-- slider section 2 start-->
+    <hr>
+    <section class="section" id="AboutTestimonialSection">
+        <h2 class="title">
+            {{TestimonialTitle}}
+        </h2>
+        <div class="slider" id="AboutTestimonialParent">
+            <div class="slide slide--1">
+                <div class="testimonial">
+                    <!-- <h5 class="testimonial__header">Best financial decision ever!</h5> -->
+                    <blockquote class="testimonial__text">
+                        {{ReviewText}}
+                    </blockquote>
+                    <address class="testimonial__author">
+                        <img src="{{TestimonialImage}}" loading="lazy" srcset="{{TestimonialImageSrcSet}}" width="100px" height="100px"
+                        alt="{{TestimonialName}}" class="testimonial__photo" />
+                        <h6 class="testimonial__name">{{TestimonialName}}</h6>
+                        <p class="testimonial__location">{{TestimonialName}}</p>
+                    </address>
+                </div>
+            </div>
+
+
+            <!-- <div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
+          <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
+          <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
+          <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div> -->
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            <div class="dots" id="AboutTestimonialControl"></div>
+        </div>
+    </section>
+    <!-- slider section 2 end -->
+      <!--Footer sections-->
+      {{Footer}}
+      <!--Footer sections-end-->
+  
+      <script>
+        //      ---------------------------------------------------------------nav bar script-------------------------------------------------------- 
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            body.classList.add("disabledScroll");
+        }
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+        }
+
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+        // slide 1--------------------------------------------------------------------------------------------------------
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i");
+        const carouselChildrens = [...carousel.children];
+        let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+        // Get the number of cards that can fit in the carousel at once
+        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+        // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+        carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+            carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+        });
+        // Insert copies of the first few cards to end of carousel for infinite scrolling
+        carouselChildrens.slice(0, cardPerView).forEach(card => {
+            carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+        });
+        // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+        // Add event listeners for the arrow buttons to scroll the carousel left and right
+        arrowBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+            });
+        });
+        const dragStart = (e) => {
+            isDragging = true;
+            carousel.classList.add("dragging");
+            // Records the initial cursor and scroll position of the carousel
+            startX = e.pageX;
+            startScrollLeft = carousel.scrollLeft;
+        }
+        const dragging = (e) => {
+            if (!isDragging) return; // if isDragging is false return from here
+            // Updates the scroll position of the carousel based on the cursor movement
+            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        }
+        const dragStop = () => {
+            isDragging = false;
+            carousel.classList.remove("dragging");
+        }
+        const infiniteScroll = () => {
+            // If the carousel is at the beginning, scroll to the end
+            if (carousel.scrollLeft === 0) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+                carousel.classList.remove("no-transition");
+            }
+            // If the carousel is at the end, scroll to the beginning
+            else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+            // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+            clearTimeout(timeoutId);
+            if (!wrapper.matches(":hover")) autoPlay();
+        }
+        const autoPlay = () => {
+            if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+            // Autoplay the carousel after every 2500 ms
+            timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 1500);
+        }
+        autoPlay();
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("scroll", infiniteScroll);
+        wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+        wrapper.addEventListener("mouseleave", autoPlay);
+
+        // slider 2 section 
+        //Testimonial Data
+        const slider = function () {
+            const slides = document.querySelectorAll('.slide');
+            const btnLeft = document.querySelector('.slider__btn--left');
+            const btnRight = document.querySelector('.slider__btn--right');
+            const dotContainer = document.querySelector('.dots');
+
+            let curSlide = 0;
+            const maxSlide = slides.length;
+
+            // Functions
+            const createDots = function () {
+                slides.forEach(function (_, i) {
+                    dotContainer.insertAdjacentHTML(
+                        'beforeend',
+                        `<button class="dots__dot" data-slide="${i}"></button>`
+                    );
+                });
+            };
+
+            const activateDot = function (slide) {
+                document
+                    .querySelectorAll('.dots__dot')
+                    .forEach(dot => dot.classList.remove('dots__dot--active'));
+
+                document
+                    .querySelector(`.dots__dot[data-slide="${slide}"]`)
+                    .classList.add('dots__dot--active');
+            };
+
+            const goToSlide = function (slide) {
+                slides.forEach(
+                    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+                );
+            };
+
+            // Next slide
+            const nextSlide = function () {
+                if (curSlide === maxSlide - 1) {
+                    curSlide = 0;
+                } else {
+                    curSlide++;
+                }
+
+                goToSlide(curSlide);
+                activateDot(curSlide);
+            };
+
+            const prevSlide = function () {
+                if (curSlide === 0) {
+                    curSlide = maxSlide - 1;
+                } else {
+                    curSlide--;
+                }
+                goToSlide(curSlide);
+                activateDot(curSlide);
+            };
+
+            const init = function () {
+                goToSlide(0);
+                createDots();
+
+                activateDot(0);
+            };
+            init();
+
+            // Event handlers
+            btnRight.addEventListener('click', nextSlide);
+            btnLeft.addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') prevSlide();
+                e.key === 'ArrowRight' && nextSlide();
+            });
+
+            dotContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('dots__dot')) {
+                    const { slide } = e.target.dataset;
+                    goToSlide(slide);
+                    activateDot(slide);
+                }
+            });
+        };
+        slider(); 
+    </script>
+</body>
+
+</html>
